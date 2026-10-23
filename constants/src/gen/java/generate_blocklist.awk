@@ -43,7 +43,9 @@ BEGIN {
   gsub(/0x/, "", newLine)
   currentHash = currentHash newLine
 }
-/\},/ {
+/\}/ {
+  if (currentHash !~ /,$/)
+    currentHash = currentHash ","
   if (inSPKIBlockList)
     hashes[currentHash] = 1
   if (inKnownInterceptionList)
