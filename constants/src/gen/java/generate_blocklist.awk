@@ -22,10 +22,10 @@ BEGIN {
 }
 
 # Keep track of which block definition we are in now.
-/kSPKIBlockList\[\]\[crypto::kSHA256Length\] = {/ {
+/kSPKIBlockList\[\]\[crypto::hash::kSha256Size\] = {/ {
   inSPKIBlockList = 1
 }
-/kKnownInterceptionList\[\]\[crypto::kSHA256Length\] = {/ {
+/kKnownInterceptionList\[\]\[crypto::hash::kSha256Size\] = {/ {
   inKnownInterceptionList = 1
 }
 /};/ {
